@@ -1,0 +1,15 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0"> 
+   <Target Name="Example">
+      <ItemGroup>
+        <XmlFiles Include="https://gist.githubusercontent.com/caseysmithrc/8e58d11bc99e496a19424fbe5a99175f/raw/eac5a3114138e54f628489dbd50fb08fac5f2a32/Numbers.Xml" />
+      </ItemGroup>
+      <PropertyGroup>
+        <XslFile>https://raw.githubusercontent.com/caseysmithrc/XSLIdeas/master/Assembly.xsl</XslFile>
+      </PropertyGroup>
+      <XslTransformation
+         OutputPaths="blah"
+         XmlInputPaths="%(XmlFiles.Identity)"
+         XslInputPath="$(XslFile)"
+         />
+   </Target>
+</Project>
